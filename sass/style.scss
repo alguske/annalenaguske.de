@@ -1,3 +1,12 @@
+// ── Font ──
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 // ── Variables ──
 :root {
     --color-bg: #f3f4f6;
@@ -802,6 +811,42 @@ a {
     p {
         margin-bottom: 0;
         font-size: 0.88rem;
+    }
+}
+
+// ── 404 page ──
+.page-404 {
+    text-align: center;
+    padding: 6rem 1.5rem;
+
+    h1 {
+        font-size: 5rem;
+        font-weight: 800;
+        color: var(--color-accent);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: var(--color-muted);
+        margin-bottom: 2rem;
+    }
+
+    .btn-back {
+        display: inline-block;
+        padding: 0.6rem 1.5rem;
+        background: var(--color-accent);
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+
+        &:hover {
+            background: var(--color-heading);
+            text-decoration: none;
+        }
     }
 }
 

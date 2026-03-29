@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Seite nicht gefunden – Anna-Lena Guske</title>{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Die angeforderte Seite wurde nicht gefunden.">
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block content %}
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-name">Anna-Lena Guske</a>
+    </div>
+</nav>
+
+<main class="container page-404">
+    <h1>404</h1>
+    <p>Die angeforderte Seite wurde leider nicht gefunden.</p>
+    <a href="/" class="btn-back">Zurück zur Startseite</a>
+</main>
+{% endblock %}
