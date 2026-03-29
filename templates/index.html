@@ -589,39 +589,7 @@
 
 </main>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3 class="footer-heading">Anna-Lena Guske</h3>
-                <p class="footer-desc">Projektleitung &middot; Sozial-ökologische Transformation</p>
-                <p class="footer-location">Berlin, Deutschland</p>
-            </div>
-            <div class="footer-col">
-                <h3 class="footer-heading">Navigation</h3>
-                <ul class="footer-links">
-                    <li><a href="#werdegang">Werdegang</a></li>
-                    <li><a href="#studium">Studium</a></li>
-                    <li><a href="#ausland">Auslandsaufenthalte</a></li>
-                    <li><a href="#kenntnisse">Kenntnisse</a></li>
-                    <li><a href="#projekte">Projekte</a></li>
-                    <li><a href="#publikationen">Publikationen</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3 class="footer-heading">Kontakt</h3>
-                <ul class="footer-links">
-                    <li><a href="mailto:al.guske@web.de">al.guske@web.de</a></li>
-                    <li><a href="https://www.linkedin.com/in/annalenaguske/" target="_blank" rel="noopener">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; {{ now() | date(format="%Y") }} Anna-Lena Guske. Alle Rechte vorbehalten.</p>
-            <p class="footer-credit">Erstellt von <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a></p>
-        </div>
-    </div>
-</footer>
+{% include "partials/footer.html" %}
 
 <script>
 // Nav scroll shadow
