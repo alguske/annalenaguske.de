@@ -3,22 +3,22 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h3 class="footer-heading">Anna-Lena Guske</h3>
-                <p class="footer-desc">Projektleitung &middot; Sozial-ökologische Transformation</p>
-                <p class="footer-location">Berlin, Deutschland</p>
+                <p class="footer-desc">{{ trans(key="footer_desc", lang=lang) }}</p>
+                <p class="footer-location">Berlin, {% if lang == "en" %}Germany{% else %}Deutschland{% endif %}</p>
             </div>
             <div class="footer-col">
-                <h3 class="footer-heading">Navigation</h3>
+                <h3 class="footer-heading">{{ trans(key="footer_nav", lang=lang) }}</h3>
                 <ul class="footer-links">
-                    <li><a href="/#werdegang">Werdegang</a></li>
-                    <li><a href="/#studium">Studium</a></li>
-                    <li><a href="/#ausland">Auslandsaufenthalte</a></li>
-                    <li><a href="/#kenntnisse">Kenntnisse</a></li>
-                    <li><a href="/#projekte">Projekte</a></li>
-                    <li><a href="/#publikationen">Publikationen</a></li>
+                    <li><a href="{% if lang == 'en' %}/en{% endif %}/#werdegang">{{ trans(key="nav_career", lang=lang) }}</a></li>
+                    <li><a href="{% if lang == 'en' %}/en{% endif %}/#studium">{{ trans(key="nav_education", lang=lang) }}</a></li>
+                    <li><a href="{% if lang == 'en' %}/en{% endif %}/#ausland">{{ trans(key="nav_abroad", lang=lang) }}</a></li>
+                    <li><a href="{% if lang == 'en' %}/en{% endif %}/#kenntnisse">{{ trans(key="nav_skills", lang=lang) }}</a></li>
+                    <li><a href="{% if lang == 'en' %}/en{% endif %}/#projekte">{{ trans(key="nav_projects", lang=lang) }}</a></li>
+                    <li><a href="{% if lang == 'en' %}/en{% endif %}/#publikationen">{{ trans(key="nav_publications", lang=lang) }}</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h3 class="footer-heading">Kontakt</h3>
+                <h3 class="footer-heading">{{ trans(key="footer_contact", lang=lang) }}</h3>
                 <ul class="footer-links">
                     <li><a href="mailto:al.guske@web.de">al.guske@web.de</a></li>
                     <li><a href="https://www.linkedin.com/in/annalenaguske/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -26,11 +26,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; {{ now() | date(format="%Y") }} Anna-Lena Guske. Alle Rechte vorbehalten.</p>
+            <p>&copy; {{ now() | date(format="%Y") }} Anna-Lena Guske. {{ trans(key="footer_rights", lang=lang) }}</p>
             <div class="footer-bottom-links">
-                <a href="/impressum/">Impressum &amp; Datenschutz</a>
+                <a href="{% if lang == 'en' %}/en{% endif %}/impressum/">{{ trans(key="footer_legal", lang=lang) }}</a>
                 <span>&middot;</span>
-                <span class="footer-credit">Erstellt von <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a></span>
+                <span class="footer-credit">{{ trans(key="footer_created", lang=lang) }} <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a></span>
             </div>
         </div>
     </div>

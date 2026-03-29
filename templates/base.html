@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config.default_language }}">
+<html lang="{{ lang }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
     <meta property="og:description" content="{{ config.description }}">
     <meta property="og:url" content="{{ config.base_url }}{{ current_path | default(value='/') }}">
     <meta property="og:site_name" content="Anna-Lena Guske – CV">
-    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}de_DE{% endif %}">
     <meta property="og:image" content="{{ config.base_url }}/img/photo.jpg">
 
     <!-- Twitter -->

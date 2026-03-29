@@ -131,6 +131,25 @@ a {
             text-decoration: none;
         }
     }
+
+    .lang-switch {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 0.15rem 0.5rem;
+        border: 1.5px solid var(--color-muted);
+        border-radius: 4px;
+        color: var(--color-muted);
+        letter-spacing: 0.05em;
+        background: transparent;
+        transition: color 0.2s, border-color 0.2s;
+
+        &:hover {
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+            background: transparent;
+            text-decoration: none;
+        }
+    }
 }
 
 // ── Hero ──
@@ -1039,6 +1058,8 @@ a {
         margin-bottom: 0.2cm;
         padding-bottom: 2pt;
         border-bottom: 1pt solid #0d7377;
+        break-after: avoid;
+        page-break-after: avoid;
 
         &::after { display: none; }
     }
@@ -1049,6 +1070,8 @@ a {
         margin: 0.3cm 0 0.15cm;
         padding-bottom: 2pt;
         border-bottom: 0.5pt solid #ccc;
+        break-after: avoid;
+        page-break-after: avoid;
     }
 
     // ── TIMELINE ──
