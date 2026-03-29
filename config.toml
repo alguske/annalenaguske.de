@@ -1,0 +1,11 @@
+base_url = "https://annalenaguske.de"
+title = "Anna-Lena Guske"
+description = "CV – Anna-Lena Guske"
+default_language = "de"
+generate_feeds = false
+compile_sass = true
+minify_html = true
+
+[markdown]
+
+[extra]
