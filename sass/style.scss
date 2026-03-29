@@ -80,8 +80,11 @@ a {
     padding: 0 1.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 56px;
+
+    .nav-name {
+        margin-right: auto;
+    }
 }
 
 .nav-name {
@@ -91,6 +94,13 @@ a {
     color: var(--color-heading);
     text-decoration: none;
     &:hover { text-decoration: none; }
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .nav-toggle {
@@ -111,6 +121,38 @@ a {
     }
 }
 
+.lang-switch {
+    display: flex;
+    border: 1.5px solid var(--color-border);
+    border-radius: 6px;
+    overflow: hidden;
+
+    .lang-option {
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        color: var(--color-muted);
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        transition: color 0.2s, background 0.2s;
+
+        &:hover {
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            text-decoration: none;
+        }
+
+        &.active {
+            color: #fff;
+            background: var(--color-accent);
+        }
+
+        & + .lang-option {
+            border-left: 1.5px solid var(--color-border);
+        }
+    }
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -128,25 +170,6 @@ a {
         &:hover, &.active {
             color: var(--color-accent);
             background: var(--color-accent-light);
-            text-decoration: none;
-        }
-    }
-
-    .lang-switch {
-        font-size: 0.72rem;
-        font-weight: 600;
-        padding: 0.15rem 0.5rem;
-        border: 1.5px solid var(--color-muted);
-        border-radius: 4px;
-        color: var(--color-muted);
-        letter-spacing: 0.05em;
-        background: transparent;
-        transition: color 0.2s, border-color 0.2s;
-
-        &:hover {
-            color: var(--color-accent);
-            border-color: var(--color-accent);
-            background: transparent;
             text-decoration: none;
         }
     }
@@ -909,6 +932,10 @@ a {
             display: block;
             padding: 0.5rem 0.65rem;
         }
+    }
+
+    .nav-actions {
+        margin-left: auto;
     }
 
     .hero-content {

@@ -35,9 +35,14 @@
 <nav class="nav" id="nav">
     <div class="nav-inner">
         <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" class="nav-name">Anna-Lena Guske</a>
+        <div class="nav-actions">
+            <div class="lang-switch">
+                <a href="/impressum/" class="lang-option{% if lang == 'de' %} active{% endif %}">DE</a>
+                <a href="/en/impressum/" class="lang-option{% if lang == 'en' %} active{% endif %}">EN</a>
+            </div>
+        </div>
         <ul class="nav-links">
             <li><a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}">{{ trans(key="back_to_cv", lang=lang) }}</a></li>
-            <li>{% if lang == "de" %}<a href="/en/impressum/" class="lang-switch">EN</a>{% else %}<a href="/impressum/" class="lang-switch">DE</a>{% endif %}</li>
         </ul>
     </div>
 </nav>

@@ -42,9 +42,15 @@
 <nav class="nav" id="nav">
     <div class="nav-inner">
         <a href="#top" class="nav-name">Anna-Lena Guske</a>
-        <button class="nav-toggle" aria-label="{{ trans(key='open_menu', lang=lang) }}" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="nav-actions">
+            <div class="lang-switch">
+                <a href="/" class="lang-option{% if lang == 'de' %} active{% endif %}">DE</a>
+                <a href="/en/" class="lang-option{% if lang == 'en' %} active{% endif %}">EN</a>
+            </div>
+            <button class="nav-toggle" aria-label="{{ trans(key='open_menu', lang=lang) }}" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
         <ul class="nav-links">
             <li><a href="#werdegang" data-section="werdegang">{{ trans(key="nav_career", lang=lang) }}</a></li>
             <li><a href="#studium" data-section="studium">{{ trans(key="nav_education", lang=lang) }}</a></li>
@@ -52,7 +58,6 @@
             <li><a href="#kenntnisse" data-section="kenntnisse">{{ trans(key="nav_skills", lang=lang) }}</a></li>
             <li><a href="#projekte" data-section="projekte">{{ trans(key="nav_projects", lang=lang) }}</a></li>
             <li><a href="#publikationen" data-section="publikationen">{{ trans(key="nav_publications", lang=lang) }}</a></li>
-            <li>{% if lang == "de" %}<a href="/en/" class="lang-switch">EN</a>{% else %}<a href="/" class="lang-switch">DE</a>{% endif %}</li>
         </ul>
     </div>
 </nav>
