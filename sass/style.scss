@@ -345,13 +345,18 @@ a {
     }
 
     .org-logo {
-        width: 44px;
-        height: 44px;
+        height: 32px;
+        width: auto;
+        max-width: 120px;
         border-radius: 4px;
         flex-shrink: 0;
         object-fit: contain;
         background: var(--color-bg);
-        padding: 4px;
+        padding: 3px 6px;
+
+        &.org-logo-dark {
+            background: var(--color-heading);
+        }
     }
 
     .intro {
