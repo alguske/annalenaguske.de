@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 
+{% block title %}<title>Impressum &amp; Datenschutz – Anna-Lena Guske</title>{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Impressum und Datenschutzerklärung der Website von Anna-Lena Guske.">
+<meta name="author" content="Anna-Lena Guske">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ config.base_url }}/impressum/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Impressum & Datenschutz – Anna-Lena Guske">
+<meta property="og:description" content="Impressum und Datenschutzerklärung der Website von Anna-Lena Guske.">
+<meta property="og:url" content="{{ config.base_url }}/impressum/">
+<meta property="og:locale" content="de_DE">
+{% endblock %}
+
 {% block content %}
 <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -21,40 +35,61 @@
 
 <main class="container legal-page">
 
-    <section class="legal-section">
-        <h2>Seitenbetreiberin</h2>
-        <p>Anna-Lena Guske<br>Berlin, Deutschland</p>
-        <p>E-Mail: <a href="mailto:al.guske@web.de">al.guske@web.de</a></p>
+    <section class="legal-card">
+        <h2 class="legal-heading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Seitenbetreiberin
+        </h2>
+        <div class="legal-body">
+            <p><strong>Anna-Lena Guske</strong><br>Berlin, Deutschland</p>
+            <p>E-Mail: <a href="mailto:al.guske@web.de">al.guske@web.de</a></p>
+        </div>
     </section>
 
-    <section class="legal-section">
-        <h2>Datenschutz</h2>
+    <section class="legal-card">
+        <h2 class="legal-heading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Datenschutz
+        </h2>
+        <div class="legal-body">
+            <div class="legal-highlight">
+                <h3>Daten, die wir nicht erheben</h3>
+                <p>Diese Website enthält keine Kontaktformulare und erhebt keine personenbezogenen Daten. Es werden keine Daten an Dritte weitergegeben.</p>
+            </div>
 
-        <h3>Daten, die wir nicht erheben</h3>
-        <p>Diese Website enthält keine Kontaktformulare und erhebt keine personenbezogenen Daten. Es werden keine Daten an Dritte weitergegeben.</p>
+            <h3>Analyse</h3>
+            <p>Diese Website verwendet <a href="https://cronitor.io/rum" target="_blank" rel="noopener">Cronitor RUM</a> zur Erfassung anonymer Nutzungsstatistiken. Dabei werden folgende aggregierte, nicht-personenbezogene Daten erfasst:</p>
+            <ul>
+                <li>Besuchte Seiten und Verweildauer</li>
+                <li>Ungefährer geografischer Standort (Land/Region)</li>
+                <li>Geräte- und Browserinformationen</li>
+                <li>Verweisende Website</li>
+            </ul>
+            <p>Diese Daten werden ausschließlich in aggregierter Form verwendet und lassen keine Rückschlüsse auf einzelne Personen zu.</p>
 
-        <h3>Analyse</h3>
-        <p>Diese Website verwendet <a href="https://cronitor.io/rum" target="_blank" rel="noopener">Cronitor RUM</a> zur Erfassung anonymer Nutzungsstatistiken. Dabei werden folgende aggregierte, nicht-personenbezogene Daten erfasst:</p>
-        <ul>
-            <li>Besuchte Seiten und Verweildauer</li>
-            <li>Ungefährer geografischer Standort (Land/Region)</li>
-            <li>Geräte- und Browserinformationen</li>
-            <li>Verweisende Website</li>
-        </ul>
-        <p>Diese Daten werden ausschließlich in aggregierter Form verwendet und lassen keine Rückschlüsse auf einzelne Personen zu.</p>
-
-        <h3>Cookies</h3>
-        <p>Diese Website setzt keine eigenen Cookies. Es werden ausschließlich technisch notwendige Cookies verwendet, die für den Betrieb der Website erforderlich sind.</p>
+            <h3>Cookies</h3>
+            <p>Diese Website setzt keine eigenen Cookies. Es werden ausschließlich technisch notwendige Cookies verwendet, die für den Betrieb der Website erforderlich sind.</p>
+        </div>
     </section>
 
-    <section class="legal-section">
-        <h2>Urheberrecht</h2>
-        <p>Alle Inhalte dieser Website (Texte, Bilder, Grafiken) sind urheberrechtlich geschützt. Die Verwendung oder Vervielfältigung bedarf der vorherigen schriftlichen Zustimmung von Anna-Lena Guske.</p>
+    <section class="legal-card">
+        <h2 class="legal-heading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Urheberrecht
+        </h2>
+        <div class="legal-body">
+            <p>Alle Inhalte dieser Website (Texte, Bilder, Grafiken) sind urheberrechtlich geschützt. Die Verwendung oder Vervielfältigung bedarf der vorherigen schriftlichen Zustimmung von Anna-Lena Guske.</p>
+        </div>
     </section>
 
-    <section class="legal-section">
-        <h2>Kontakt</h2>
-        <p>Bei Fragen zu dieser Website oder zum Datenschutz wenden Sie sich bitte an <a href="mailto:al.guske@web.de">al.guske@web.de</a>.</p>
+    <section class="legal-card">
+        <h2 class="legal-heading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+            Kontakt
+        </h2>
+        <div class="legal-body">
+            <p>Bei Fragen zu dieser Website oder zum Datenschutz wenden Sie sich bitte an <a href="mailto:al.guske@web.de">al.guske@web.de</a>.</p>
+        </div>
     </section>
 
 </main>

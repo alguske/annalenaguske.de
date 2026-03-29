@@ -1,5 +1,43 @@
 {% extends "base.html" %}
 
+{% block head_extra %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anna-Lena Guske",
+    "url": "https://annalenaguske.de",
+    "image": "https://annalenaguske.de/img/photo.jpg",
+    "email": "mailto:al.guske@web.de",
+    "jobTitle": "Projektleitung",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Diakonie Deutschland"
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+    },
+    "alumniOf": [
+        {
+            "@type": "CollegeOrUniversity",
+            "name": "Freie Universität Berlin"
+        },
+        {
+            "@type": "CollegeOrUniversity",
+            "name": "Philipps-Universität Marburg"
+        }
+    ],
+    "knowsLanguage": ["de", "en", "es"],
+    "sameAs": [
+        "https://www.linkedin.com/in/annalenaguske/"
+    ],
+    "description": "Projektleitung bei der Diakonie Deutschland mit Schwerpunkt auf sozial-ökologische Transformation, Klima- und Sozialpolitik."
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <nav class="nav" id="nav">
     <div class="nav-inner">

@@ -3,19 +3,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config.title }} – CV</title>
+
+    {% block title %}<title>{{ config.title }} – CV</title>{% endblock %}
+    {% block meta %}
     <meta name="description" content="{{ config.description }}">
-    <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}">
+    <meta name="author" content="Anna-Lena Guske">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ config.base_url }}{{ current_path | default(value='/') }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:description" content="{{ config.description }}">
+    <meta property="og:url" content="{{ config.base_url }}{{ current_path | default(value='/') }}">
+    <meta property="og:site_name" content="Anna-Lena Guske – CV">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:image" content="{{ config.base_url }}/img/photo.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ config.title }}">
+    <meta name="twitter:description" content="{{ config.description }}">
+    <meta name="twitter:image" content="{{ config.base_url }}/img/photo.jpg">
+    {% endblock %}
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0d7377">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+
     <!-- Cronitor RUM -->
     <script async src="https://rum.cronitor.io/script.js"></script>
     <script>
         window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
         cronitor('config', { clientKey: '0b01ffefe0e7e50470c1b3ebe0a145ce' });
     </script>
+
+    {% block head_extra %}{% endblock %}
 </head>
 <body>
     {% block content %}{% endblock %}
