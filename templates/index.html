@@ -630,6 +630,11 @@
 {% include "partials/footer.html" %}
 
 <script>
+// Show logos if ?logos=1
+if (new URLSearchParams(window.location.search).get('logos') === '1') {
+    document.body.classList.add('show-logos');
+}
+
 // Nav scroll shadow
 document.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);

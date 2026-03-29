@@ -345,6 +345,8 @@ a {
     }
 
     .org-logo {
+        display: none;
+
         height: 32px;
         width: auto;
         max-width: 120px;
@@ -353,6 +355,10 @@ a {
         object-fit: contain;
         background: var(--color-bg);
         padding: 3px 6px;
+
+        .show-logos & {
+            display: inline-block;
+        }
 
         &.org-logo-dark {
             background: var(--color-heading);
