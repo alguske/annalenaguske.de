@@ -42,6 +42,15 @@
 <nav class="nav" id="nav">
     <div class="nav-inner">
         <a href="#top" class="nav-name">Anna-Lena Guske</a>
+        <ul class="nav-links">
+            <li><a href="#ueber" data-section="ueber">{{ trans(key="nav_about", lang=lang) }}</a></li>
+            <li><a href="#werdegang" data-section="werdegang">{{ trans(key="nav_career", lang=lang) }}</a></li>
+            <li><a href="#studium" data-section="studium">{{ trans(key="nav_education", lang=lang) }}</a></li>
+            <li><a href="#ausland" data-section="ausland">{{ trans(key="nav_abroad", lang=lang) }}</a></li>
+            <li><a href="#kenntnisse" data-section="kenntnisse">{{ trans(key="nav_skills", lang=lang) }}</a></li>
+            <li><a href="#projekte" data-section="projekte">{{ trans(key="nav_projects", lang=lang) }}</a></li>
+            <li><a href="#publikationen" data-section="publikationen">{{ trans(key="nav_publications", lang=lang) }}</a></li>
+        </ul>
         <div class="nav-actions">
             <div class="lang-switch">
                 <a href="/" class="lang-option{% if lang == 'de' %} active{% endif %}">DE</a>
@@ -51,14 +60,6 @@
                 <span></span><span></span><span></span>
             </button>
         </div>
-        <ul class="nav-links">
-            <li><a href="#werdegang" data-section="werdegang">{{ trans(key="nav_career", lang=lang) }}</a></li>
-            <li><a href="#studium" data-section="studium">{{ trans(key="nav_education", lang=lang) }}</a></li>
-            <li><a href="#ausland" data-section="ausland">{{ trans(key="nav_abroad", lang=lang) }}</a></li>
-            <li><a href="#kenntnisse" data-section="kenntnisse">{{ trans(key="nav_skills", lang=lang) }}</a></li>
-            <li><a href="#projekte" data-section="projekte">{{ trans(key="nav_projects", lang=lang) }}</a></li>
-            <li><a href="#publikationen" data-section="publikationen">{{ trans(key="nav_publications", lang=lang) }}</a></li>
-        </ul>
     </div>
 </nav>
 
@@ -93,6 +94,14 @@
 </header>
 
 <main class="container">
+
+    <section class="section" id="ueber">
+        <h2 class="section-title"><span>{{ trans(key="section_about", lang=lang) }}</span></h2>
+        <div class="about-content">
+            {% if lang == "de" %}{% include "partials/cv/about-de.html" %}
+            {% else %}{% include "partials/cv/about-en.html" %}{% endif %}
+        </div>
+    </section>
 
     <section class="section" id="werdegang">
         <h2 class="section-title"><span>{{ trans(key="section_career", lang=lang) }}</span></h2>
