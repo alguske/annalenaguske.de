@@ -1,14 +1,23 @@
 base_url = "https://annalenaguske.de"
-title = "Anna-Lena Guske"
-description = "CV – Anna-Lena Guske"
+title = "Anna-Lena Guske – Klimapolitik & sozial-ökologische Transformation"
+description = "Anna-Lena Guske – Leitung Klimapolitik & sozial-ökologische Transformation in Berlin. Expertin für EU- und Bundesfördermittel, Schnittstellenarbeit zwischen Politik, Wissenschaft und Zivilgesellschaft. Werdegang, Projekte und Publikationen."
 default_language = "de"
 generate_feeds = false
 compile_sass = true
 minify_html = true
+build_search_index = false
 
 [markdown]
 
 [extra]
+author = "Anna-Lena Guske"
+og_image = "/img/photo.jpg"
+og_image_width = "400"
+og_image_height = "400"
+keywords_de = "Anna-Lena Guske, Klimapolitik, Klimaschutz, sozial-ökologische Transformation, Klimagerechtigkeit, EU-Fördermittel, Bundesförderung, Förderprogramme, Politikberatung, Diakonie Deutschland, Berlin, Lebenslauf, CV, Projektleitung, Just Transition"
+keywords_en = "Anna-Lena Guske, climate policy, climate justice, socio-ecological transformation, just transition, EU funding, federal funding, policy advice, Diakonie Deutschland, Berlin, CV, resume, project lead"
+og_image_alt_de = "Porträt von Anna-Lena Guske"
+og_image_alt_en = "Portrait of Anna-Lena Guske"
 
 [translations]
 nav_about = "Über"
@@ -45,8 +54,8 @@ sub_project_mgmt = "Projektmanagement & Kommunikation"
 sub_scientific = "Wissenschaftliche Mitarbeit"
 
 [languages.en]
-title = "Anna-Lena Guske"
-description = "CV – Anna-Lena Guske"
+title = "Anna-Lena Guske – Climate Policy & Socio-ecological Transformation"
+description = "Anna-Lena Guske – Head of Climate Policy & Socio-ecological Transformation, based in Berlin. Expert in EU and federal funding, bridging politics, science and civil society. Career, projects and publications."
 generate_feeds = false
 
 [languages.en.translations]

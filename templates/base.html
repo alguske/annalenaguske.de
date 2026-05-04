@@ -4,33 +4,82 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% block title %}<title>{{ config.title }} – CV</title>{% endblock %}
+    {% set page_path = current_path | default(value='/') %}
+    {% set page_url = config.base_url ~ page_path %}
+    {% set og_image_path = config.extra.og_image | default(value='/img/photo.jpg') %}
+    {% set og_image = config.base_url ~ og_image_path %}
+    {% set og_image_width = config.extra.og_image_width | default(value='400') %}
+    {% set og_image_height = config.extra.og_image_height | default(value='400') %}
+    {% if lang == 'en' %}
+        {% set keywords = config.extra.keywords_en | default(value='') %}
+        {% set og_image_alt = config.extra.og_image_alt_en | default(value='Anna-Lena Guske') %}
+    {% else %}
+        {% set keywords = config.extra.keywords_de | default(value='') %}
+        {% set og_image_alt = config.extra.og_image_alt_de | default(value='Anna-Lena Guske') %}
+    {% endif %}
+    {% set author = config.extra.author | default(value='Anna-Lena Guske') %}
+
+    {% block title %}<title>{{ config.title }}</title>{% endblock %}
+
+    <!-- Static meta: canonical, hreflang, robots, author, og:image, twitter:image -->
+    {% block extra_meta_static %}
+    <meta name="author" content="{{ author }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
+    {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+    <link rel="canonical" href="{{ page_url }}">
+
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ page_url }}">
+    {% if page %}
+        {% for t in page.translations %}
+            {% if t.lang != lang %}
+        <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.permalink | safe }}">
+            {% endif %}
+        {% endfor %}
+    {% elif section %}
+        {% for t in section.translations %}
+            {% if t.lang != lang %}
+        <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.permalink | safe }}">
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}/">
+
+    <!-- Shared OG image + Twitter image -->
+    <meta property="og:image" content="{{ og_image }}">
+    <meta property="og:image:secure_url" content="{{ og_image }}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="{{ og_image_width }}">
+    <meta property="og:image:height" content="{{ og_image_height }}">
+    <meta property="og:image:alt" content="{{ og_image_alt }}">
+    <meta property="og:site_name" content="Anna-Lena Guske">
+    <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}de_DE{% endif %}">
+    <meta property="og:locale:alternate" content="{% if lang == 'en' %}de_DE{% else %}en_US{% endif %}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="{{ og_image }}">
+    <meta name="twitter:image:alt" content="{{ og_image_alt }}">
+    {% endblock %}
+
     {% block meta %}
     <meta name="description" content="{{ config.description }}">
-    <meta name="author" content="Anna-Lena Guske">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ config.base_url }}{{ current_path | default(value='/') }}">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
     <meta property="og:title" content="{{ config.title }}">
     <meta property="og:description" content="{{ config.description }}">
-    <meta property="og:url" content="{{ config.base_url }}{{ current_path | default(value='/') }}">
-    <meta property="og:site_name" content="Anna-Lena Guske – CV">
-    <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}de_DE{% endif %}">
-    <meta property="og:image" content="{{ config.base_url }}/img/photo.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="{{ page_url }}">
     <meta name="twitter:title" content="{{ config.title }}">
     <meta name="twitter:description" content="{{ config.description }}">
-    <meta name="twitter:image" content="{{ config.base_url }}/img/photo.jpg">
+    {% block og_extra %}{% endblock %}
     {% endblock %}
 
     <!-- Favicon & Manifest -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#0d7377">
+
+    <!-- Performance: preconnect for analytics -->
+    <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
+    <link rel="dns-prefetch" href="https://rum.cronitor.io">
 
     <!-- Font: self-hosted Inter -->
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>

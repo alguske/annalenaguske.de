@@ -1,7 +1,10 @@
 {
-    "name": "Anna-Lena Guske – CV",
+    "name": "Anna-Lena Guske – Klimapolitik & sozial-ökologische Transformation",
     "short_name": "A-L Guske",
+    "description": "CV von Anna-Lena Guske – Leitung Klimapolitik & sozial-ökologische Transformation in Berlin.",
+    "lang": "de",
     "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#0d7377",
@@ -9,7 +12,8 @@
         {
             "src": "/favicon.svg",
             "sizes": "any",
-            "type": "image/svg+xml"
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
         }
     ]
 }

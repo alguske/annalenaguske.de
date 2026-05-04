@@ -1,39 +1,126 @@
 {% extends "base.html" %}
 
+{% block og_type %}profile{% endblock %}
+
+{% block og_extra %}
+    <meta property="profile:first_name" content="Anna-Lena">
+    <meta property="profile:last_name" content="Guske">
+    <meta property="profile:gender" content="female">
+{% endblock %}
+
 {% block head_extra %}
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Anna-Lena Guske",
-    "url": "https://annalenaguske.de",
-    "image": "https://annalenaguske.de/img/photo.jpg",
-    "email": "mailto:al.guske@web.de",
-    "jobTitle": "{% if lang == 'en' %}Project Lead{% else %}Projektleitung{% endif %}",
-    "worksFor": {
-        "@type": "Organization",
-        "name": "Diakonie Deutschland"
-    },
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Berlin",
-        "addressCountry": "DE"
-    },
-    "alumniOf": [
+    "@graph": [
         {
-            "@type": "CollegeOrUniversity",
-            "name": "Freie Universität Berlin"
+            "@type": "WebSite",
+            "@id": "https://annalenaguske.de/#website",
+            "url": "https://annalenaguske.de",
+            "name": "Anna-Lena Guske",
+            "description": "{{ config.description | safe }}",
+            "inLanguage": "{{ lang }}",
+            "publisher": { "@id": "https://annalenaguske.de/#person" }
         },
         {
-            "@type": "CollegeOrUniversity",
-            "name": "Philipps-Universität Marburg"
+            "@type": "ProfilePage",
+            "@id": "{{ config.base_url | safe }}{{ current_path | default(value='/') | safe }}#profilepage",
+            "url": "{{ config.base_url | safe }}{{ current_path | default(value='/') | safe }}",
+            "name": "{{ config.title | safe }}",
+            "inLanguage": "{{ lang }}",
+            "isPartOf": { "@id": "https://annalenaguske.de/#website" },
+            "about": { "@id": "https://annalenaguske.de/#person" },
+            "mainEntity": { "@id": "https://annalenaguske.de/#person" }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://annalenaguske.de/#person",
+            "name": "Anna-Lena Guske",
+            "givenName": "Anna-Lena",
+            "familyName": "Guske",
+            "gender": "Female",
+            "url": "https://annalenaguske.de",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://annalenaguske.de/img/photo.jpg",
+                "width": 400,
+                "height": 400
+            },
+            "email": "mailto:al.guske@web.de",
+            "jobTitle": "{% if lang == 'en' %}Head of Climate Policy & Socio-ecological Transformation{% else %}Leitung Klimapolitik & sozial-ökologische Transformation{% endif %}",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Diakonie Deutschland",
+                "url": "https://www.diakonie.de"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Berlin",
+                "addressRegion": "Berlin",
+                "addressCountry": "DE"
+            },
+            "homeLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Berlin",
+                    "addressCountry": "DE"
+                }
+            },
+            "alumniOf": [
+                {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Freie Universität Berlin",
+                    "url": "https://www.fu-berlin.de"
+                },
+                {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Philipps-Universität Marburg",
+                    "url": "https://www.uni-marburg.de"
+                }
+            ],
+            "knowsLanguage": [
+                {"@type": "Language", "name": "German", "alternateName": "de"},
+                {"@type": "Language", "name": "English", "alternateName": "en"},
+                {"@type": "Language", "name": "Spanish", "alternateName": "es"}
+            ],
+            "knowsAbout": [
+                {% if lang == 'en' %}
+                "Climate policy",
+                "Socio-ecological transformation",
+                "Climate justice",
+                "Just transition",
+                "EU funding programmes",
+                "Federal funding (Germany)",
+                "Policy advice",
+                "Sustainability research",
+                "Environmental policy",
+                "Civil society engagement"
+                {% else %}
+                "Klimapolitik",
+                "Sozial-ökologische Transformation",
+                "Klimagerechtigkeit",
+                "Just Transition",
+                "EU-Fördermittel",
+                "Bundesförderung",
+                "Politikberatung",
+                "Nachhaltigkeitsforschung",
+                "Umweltpolitik",
+                "Zivilgesellschaftliches Engagement"
+                {% endif %}
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "al.guske@web.de",
+                "contactType": "{% if lang == 'en' %}professional{% else %}beruflich{% endif %}",
+                "availableLanguage": ["de", "en", "es"]
+            },
+            "sameAs": [
+                "https://www.linkedin.com/in/annalenaguske/"
+            ],
+            "description": "{% if lang == 'en' %}Head of Climate Policy & Socio-ecological Transformation at Diakonie Deutschland. Expert in EU and federal funding, bridging politics, science and civil society.{% else %}Leitung Klimapolitik & sozial-ökologische Transformation bei der Diakonie Deutschland. Expertin für EU- und Bundesfördermittel, Schnittstellenarbeit zwischen Politik, Wissenschaft und Zivilgesellschaft.{% endif %}"
         }
-    ],
-    "knowsLanguage": ["de", "en", "es"],
-    "sameAs": [
-        "https://www.linkedin.com/in/annalenaguske/"
-    ],
-    "description": "{% if lang == 'en' %}Project lead at Diakonie Deutschland with a focus on socio-ecological transformation, climate and social policy.{% else %}Projektleitung bei der Diakonie Deutschland mit Schwerpunkt auf sozial-ökologische Transformation, Klima- und Sozialpolitik.{% endif %}"
+    ]
 }
 </script>
 {% endblock %}
@@ -66,7 +153,7 @@
 <header class="hero" id="top">
     <div class="container">
         <div class="hero-content">
-            <img src="{{ get_url(path='img/photo.jpg') }}" alt="Anna-Lena Guske" class="hero-photo" width="120" height="120">
+            <img src="{{ get_url(path='img/photo.jpg') }}" alt="{% if lang == 'en' %}Portrait of Anna-Lena Guske{% else %}Porträt von Anna-Lena Guske{% endif %}" class="hero-photo" width="120" height="120" fetchpriority="high" decoding="async">
             <div class="hero-text">
                 <h1>Anna-Lena Guske</h1>
                 <p class="hero-tagline">{{ trans(key="hero_tagline", lang=lang) }}</p>
