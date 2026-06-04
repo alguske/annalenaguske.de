@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}<title>Seite nicht gefunden – Anna-Lena Guske</title>{% endblock %}
+{% block title %}<title>{% if lang == "en" %}Page not found{% else %}Seite nicht gefunden{% endif %} – Anna-Lena Guske</title>{% endblock %}
 
 {% block meta %}
-<meta name="description" content="Die angeforderte Seite wurde nicht gefunden.">
-<meta name="robots" content="noindex">
+<meta name="description" content="{% if lang == "en" %}The requested page could not be found.{% else %}Die angeforderte Seite wurde nicht gefunden.{% endif %}">
+<meta name="robots" content="noindex, follow">
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,12 @@
 
 <main class="container page-404">
     <h1>404</h1>
+    {% if lang == "en" %}
+    <p>Sorry, the requested page could not be found.</p>
+    <a href="/" class="btn-back">Back to homepage</a>
+    {% else %}
     <p>Die angeforderte Seite wurde leider nicht gefunden.</p>
     <a href="/" class="btn-back">Zurück zur Startseite</a>
+    {% endif %}
 </main>
 {% endblock %}

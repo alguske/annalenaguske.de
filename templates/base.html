@@ -74,12 +74,11 @@
 
     <!-- Favicon & Manifest -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="{% if lang == 'en' %}/en/site.webmanifest{% else %}/site.webmanifest{% endif %}">
     <meta name="theme-color" content="#0d7377">
 
     <!-- Performance: preconnect for analytics -->
     <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
-    <link rel="dns-prefetch" href="https://rum.cronitor.io">
 
     <!-- Font: self-hosted Inter -->
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>

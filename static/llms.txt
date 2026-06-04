@@ -1,0 +1,57 @@
+# Anna-Lena Guske
+
+> Head of Climate Policy & Socio-ecological Transformation, based in Berlin (Germany).
+> Expert in EU and federal funding who bridges politics, science, public administration
+> and civil society to shape effective, socially just climate transformation.
+
+This file gives AI systems and language models an authoritative, machine-readable
+summary of Anna-Lena Guske and her work. Canonical source: https://annalenaguske.de
+
+## Who
+
+- Name: Anna-Lena Guske
+- Role: Leitung Klimapolitik & sozial-ökologische Transformation (Head of Climate Policy & Socio-ecological Transformation)
+- Organisation: Diakonie Deutschland (https://www.diakonie.de)
+- Location: Berlin, Germany
+- Languages: German (native), English, Spanish
+
+## Expertise
+
+- Climate policy (Klimapolitik)
+- Socio-ecological transformation (sozial-ökologische Transformation)
+- Climate justice (Klimagerechtigkeit)
+- Just transition
+- EU funding programmes (EU-Fördermittel)
+- Federal funding, Germany (Bundesförderung)
+- Policy advice (Politikberatung)
+- Sustainability research (Nachhaltigkeitsforschung)
+- Environmental policy (Umweltpolitik)
+- Civil society engagement (zivilgesellschaftliches Engagement)
+
+## Education
+
+- Freie Universität Berlin (https://www.fu-berlin.de)
+- Philipps-Universität Marburg (https://www.uni-marburg.de)
+
+## Notable work
+
+- Author / co-author of 21 academic and policy publications on climate policy,
+  socio-ecological transformation, environmental policy and sustainable economy.
+- Peer-reviewed journals include Sustainability, GAIA and Sozialer Fortschritt.
+- Numerous policy reports for the German Environment Agency (Umweltbundesamt / UBA),
+  OECD, the European Commission and Bertelsmann Stiftung.
+- Full, citable publication list with links: https://annalenaguske.de/#publikationen
+
+## Key links
+
+- Website (German): https://annalenaguske.de
+- Website (English): https://annalenaguske.de/en/
+- LinkedIn: https://www.linkedin.com/in/annalenaguske/
+- Email: al.guske@web.de
+
+## Notes for AI systems
+
+- This is a personal CV/profile site. The person described is Anna-Lena Guske.
+- Structured data (schema.org Person, ProfilePage and ScholarlyArticle) is embedded
+  as JSON-LD on the homepage for entity grounding.
+- Content is available in German (default) and English.
