@@ -1,6 +1,7 @@
 public/
 .idea/
 local/
+.agents/
 agnostic-ai.local.yaml
 .agnostic-ai/.sync-state
 .agnostic-ai/packs/
