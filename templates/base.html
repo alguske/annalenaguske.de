@@ -92,8 +92,10 @@
     </script>
 
     {% block head_extra %}{% endblock %}
+    <script defer src="{{ get_url(path='site.js') }}"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">{{ trans(key="skip_content", lang=lang) }}</a>
     {% block content %}{% endblock %}
 </body>
 </html>

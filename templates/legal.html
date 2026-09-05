@@ -26,16 +26,16 @@
 {% endblock %}
 
 {% block content %}
-<nav class="nav" id="nav">
+<nav class="nav nav-subpage" id="nav" aria-label="{{ trans(key='footer_nav', lang=lang) }}">
     <div class="nav-inner">
         <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" class="nav-name">Anna-Lena Guske</a>
         <div class="nav-actions">
-            <div class="lang-switch">
-                <a href="/impressum/" class="lang-option{% if lang == 'de' %} active{% endif %}">DE</a>
-                <a href="/en/impressum/" class="lang-option{% if lang == 'en' %} active{% endif %}">EN</a>
+            <div class="lang-switch" role="group" aria-label="{{ trans(key='language_label', lang=lang) }}">
+                <a href="/impressum/" lang="de" hreflang="de" aria-label="Deutsch"{% if lang == 'de' %} aria-current="page"{% endif %} class="lang-option{% if lang == 'de' %} active{% endif %}">DE</a>
+                <a href="/en/impressum/" lang="en" hreflang="en" aria-label="English"{% if lang == 'en' %} aria-current="page"{% endif %} class="lang-option{% if lang == 'en' %} active{% endif %}">EN</a>
             </div>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-back">
             <li><a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}">{{ trans(key="back_to_cv", lang=lang) }}</a></li>
         </ul>
     </div>
@@ -55,7 +55,7 @@
     </div>
 </header>
 
-<main class="container legal-page">
+<main class="container legal-page" id="main-content" tabindex="-1">
 
     <section class="legal-card">
         <h2 class="legal-heading">
@@ -81,7 +81,7 @@
             </div>
 
             <h3>Analytics</h3>
-            <p>This website uses <a href="https://cronitor.io/rum" target="_blank" rel="noopener">Cronitor RUM</a> for anonymous usage statistics. The following aggregated, non-personal data is collected:</p>
+            <p>This website uses <a href="https://cronitor.io/real-user-monitoring" target="_blank" rel="noopener">Cronitor RUM</a> for anonymous usage statistics. The following aggregated, non-personal data is collected:</p>
             <ul>
                 <li>Pages visited and time spent</li>
                 <li>Approximate geographic location (country/region)</li>
@@ -99,7 +99,7 @@
             </div>
 
             <h3>Analyse</h3>
-            <p>Diese Website verwendet <a href="https://cronitor.io/rum" target="_blank" rel="noopener">Cronitor RUM</a> zur Erfassung anonymer Nutzungsstatistiken. Dabei werden folgende aggregierte, nicht-personenbezogene Daten erfasst:</p>
+            <p>Diese Website verwendet <a href="https://cronitor.io/real-user-monitoring" target="_blank" rel="noopener">Cronitor RUM</a> zur Erfassung anonymer Nutzungsstatistiken. Dabei werden folgende aggregierte, nicht-personenbezogene Daten erfasst:</p>
             <ul>
                 <li>Besuchte Seiten und Verweildauer</li>
                 <li>Ungefährer geografischer Standort (Land/Region)</li>
@@ -146,9 +146,4 @@
 
 {% include "partials/footer.html" %}
 
-<script>
-document.addEventListener('scroll', () => {
-    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
-});
-</script>
 {% endblock %}
