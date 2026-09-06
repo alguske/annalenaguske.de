@@ -1,13 +1,25 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
-            <div class="footer-col">
-                <h3 class="footer-heading">Anna-Lena Guske</h3>
+            <div class="footer-profile">
+                <h2 class="footer-name">Anna-Lena Guske</h2>
                 <p class="footer-desc">{{ trans(key="footer_desc", lang=lang) }}</p>
-                <p class="footer-location">Berlin, {% if lang == "en" %}Germany{% else %}Deutschland{% endif %}</p>
+                <p class="footer-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    Berlin, {% if lang == "en" %}Germany{% else %}Deutschland{% endif %}
+                </p>
+                <ul class="footer-contact-links" aria-label="{{ trans(key='footer_contact', lang=lang) }}">
+                    <li><a class="footer-email" href="mailto:al.guske@web.de">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                        al.guske@web.de
+                    </a></li>
+                    <li><a href="https://www.linkedin.com/in/annalenaguske/" target="_blank" rel="noopener">LinkedIn
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                    </a></li>
+                </ul>
             </div>
-            <div class="footer-col">
-                <h3 class="footer-heading">{{ trans(key="footer_nav", lang=lang) }}</h3>
+            <nav class="footer-nav" aria-label="{{ trans(key='footer_nav_label', lang=lang) }}">
+                <h2 class="footer-heading">{{ trans(key="footer_nav", lang=lang) }}</h2>
                 <ul class="footer-links">
                     <li><a href="{% if lang == 'en' %}/en{% endif %}/#werdegang">{{ trans(key="nav_career", lang=lang) }}</a></li>
                     <li><a href="{% if lang == 'en' %}/en{% endif %}/#studium">{{ trans(key="nav_education", lang=lang) }}</a></li>
@@ -16,20 +28,12 @@
                     <li><a href="{% if lang == 'en' %}/en{% endif %}/#projekte">{{ trans(key="nav_projects", lang=lang) }}</a></li>
                     <li><a href="{% if lang == 'en' %}/en{% endif %}/#publikationen">{{ trans(key="nav_publications", lang=lang) }}</a></li>
                 </ul>
-            </div>
-            <div class="footer-col">
-                <h3 class="footer-heading">{{ trans(key="footer_contact", lang=lang) }}</h3>
-                <ul class="footer-links">
-                    <li><a href="mailto:al.guske@web.de">al.guske@web.de</a></li>
-                    <li><a href="https://www.linkedin.com/in/annalenaguske/" target="_blank" rel="noopener">LinkedIn</a></li>
-                </ul>
-            </div>
+            </nav>
         </div>
         <div class="footer-bottom">
             <p>&copy; {{ now() | date(format="%Y") }} Anna-Lena Guske. {{ trans(key="footer_rights", lang=lang) }}</p>
             <div class="footer-bottom-links">
                 <a href="{% if lang == 'en' %}/en{% endif %}/impressum/">{{ trans(key="footer_legal", lang=lang) }}</a>
-                <span>&middot;</span>
                 <span class="footer-credit">{{ trans(key="footer_created", lang=lang) }} <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a></span>
             </div>
         </div>
